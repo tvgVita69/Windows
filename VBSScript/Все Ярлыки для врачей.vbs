@@ -1,9 +1,13 @@
 Dim SavePsw 
 Set SavePsw = CreateObject("WScript.Shell")
-SavePsw.Run "cmd.exe /c chcp 1251&&net use \\labserver /user:moscow\Администратор_ begin",0,true
-SavePsw.Run "cmd.exe /c chcp 1251&&net use \\192.168.0.2 /user:moscow\Администратор_ begin",0,true
-SavePsw.Run "cmd.exe /c chcp 1251&&net use \\win2kserv.moscow.onclinic.microsoft.com /user:moscow\Администратор_ begin",0,true
-SavePsw.Run "cmd.exe /c chcp 1251&&net use \\192.168.0.100 /user:moscow\Администратор_ begin",0,true
+SavePsw.Run "cmd.exe /c chcp 1251&&net use \\labserver /user:presnya\РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ_ begin",0,true
+SavePsw.Run "cmd.exe /c chcp 1251&&net use \\192.168.0.2 /user:presnya\РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ_ begin",0,true
+SavePsw.Run "cmd.exe /c chcp 1251&&net use \\win2kserv.moscow.onclinic.microsoft.com /user:presnya\РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ_ begin",0,true
+SavePsw.Run "cmd.exe /c chcp 1251&&net use \\192.168.0.100 /user:presnya\РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ_ begin",0,true
+SavePsw.Run "cmd.exe /c chcp 1251&&net use \\bicept.moscow.onclinic.microsoft.com /user:presnya\РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ_ begin",0,true
+SavePsw.Run "cmd.exe /c chcp 1251&&net use \\192.168.0.211 /user:presnya\РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ_ begin",0,true
+SavePsw.Run "cmd.exe /c chcp 1251&&net use \\bicepz.moscow.onclinic.microsoft.com /user:presnya\РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ_ begin",0,true
+SavePsw.Run "cmd.exe /c chcp 1251&&net use \\192.168.0.210 /user:presnya\РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ_ begin",0,true
 SavePsw.Run "cmd.exe /c chcp 1251&&net use /persistent:yes",0,true
 Set SavePsw = Nothing
 
@@ -13,21 +17,50 @@ desktopDir = objDesktop.Self.Path & "\"
 Set objDesktop = Nothing
 Set objShell = Nothing
 Set objWShell = CreateObject("WScript.Shell")
-Set objSC = objWShell.CreateShortcut(desktopDir & "Стандарты.lnk")
-objSC.Description = "Стандарты"
-objSC.TargetPath = "\\192.168.0.2\Documents\Clinica\Общие документы\Стандарты"
-objSC.IconLocation = "\\192.168.0.100\netlogon\label\standart.ico"
+Set objSC = objWShell.CreateShortcut(desktopDir & "РЎС‚Р°РЅРґР°СЂС‚С‹.lnk")
+objSC.Description = "Р›РµС‡РµРЅРёРµ РІ РР·СЂР°РёР»Рµ"
+objSC.TargetPath = "\\192.168.0.2\Documents\Clinica\РћР±С‰РёРµ РґРѕРєСѓРјРµРЅС‚С‹\РЎС‚Р°РЅРґР°СЂС‚С‹"
+objSC.IconLocation = "\\192.168.1.100\netlogon\label\standart.ico"
 objSC.Save
 Set objWShell = Nothing
+
+Set objShell = CreateObject("Shell.Application")
+Set objDesktop = objShell.NameSpace(&H0)
+desktopDir = objDesktop.Self.Path & "\"
+Set objDesktop = Nothing
+Set objShell = Nothing
+Set objWShell = CreateObject("WScript.Shell")
+Set objSC = objWShell.CreateShortcut(desktopDir & "РЎРўР РђРҐРћР’Р«Р•.lnk")
+objSC.Description = "РЎРўР РђРҐРћР’Р«Р•"
+objSC.IconLocation = "\\192.168.1.100\netlogon\label\Text.ico"
+objSC.TargetPath = "\\192.168.0.2\Documents\Clinica\РљР°Р±РёРЅРµС‚С‹\СЌС‚Р°Р¶ 6\РєР°Р±РёРЅРµС‚ 608\РЎРўР РђРҐРћР’Р«Р•"
+objSC.Save
+Set objWShell = Nothing
+
 
 
 Set objDesktop = Nothing
 Set objShell = Nothing
 Set objWShell = CreateObject("WScript.Shell")
-Set objSC = objWShell.CreateShortcut(desktopDir & "Новости клиники.lnk")
-objSC.Description = "Новости клиники"
-objSC.TargetPath = "\\192.168.0.2\Documents\Clinica\Новости клиники"
-objSC.IconLocation = "\\192.168.0.100\netlogon\label\Новости клиники.ico"
+Set objSC = objWShell.CreateShortcut(desktopDir & "РќРѕРІРѕСЃС‚Рё РєР»РёРЅРёРєРё.lnk")
+objSC.Description = "РќРѕРІРѕСЃС‚Рё РєР»РёРЅРёРєРё"
+objSC.TargetPath = "\\192.168.0.2\Documents\Clinica\РќРѕРІРѕСЃС‚Рё РєР»РёРЅРёРєРё"
+objSC.IconLocation = "\\192.168.1.100\netlogon\label\РќРѕРІРѕСЃС‚Рё РєР»РёРЅРёРєРё.ico"
+objSC.Save
+Set objWShell = Nothing
+
+Set objShell = CreateObject("Shell.Application")
+Set objDesktop = objShell.NameSpace(&H0)
+desktopDir = objDesktop.Self.Path & "\"
+Set objDesktop = Nothing
+Set objShell = Nothing
+Set objWShell = CreateObject("WScript.Shell")
+Set objSC = objWShell.CreateShortcut(desktopDir & "РљР»РёРЅРёРєР° РІ РР·СЂР°РёР»Рµ.lnk")
+objSC.Description = "Р›РµС‡РµРЅРёРµ РІ РР·СЂР°РёР»Рµ"
+objSC.TargetPath = "\\192.168.1.100\Rdll\site.hta"
+objSC.IconLocation = "\\192.168.1.100\netlogon\label\Israels.ico"
+objSC.Save
+objSC.Arguments = " http://elite-medical.ru/"
 objSC.Save
 Set objWShell = Nothing
 
@@ -38,10 +71,10 @@ desktopDir = objDesktop.Self.Path & "\"
 Set objDesktop = Nothing
 Set objShell = Nothing
 Set objWShell = CreateObject("WScript.Shell")
-Set objSC = objWShell.CreateShortcut(desktopDir & "Лечение в Израиле.lnk")
-objSC.Description = "Лечение в Израиле"
-objSC.TargetPath = "\\192.168.0.2\Documents\Clinica\Общие документы\Лечение в Израиле"
-objSC.IconLocation = "\\192.168.0.100\netlogon\label\Israel.ico"
+Set objSC = objWShell.CreateShortcut(desktopDir & "Р›РµС‡РµРЅРёРµ РІ РР·СЂР°РёР»Рµ.lnk")
+objSC.Description = "Р›РµС‡РµРЅРёРµ РІ РР·СЂР°РёР»Рµ"
+objSC.TargetPath = "\\192.168.0.2\Documents\Clinica\РћР±С‰РёРµ РґРѕРєСѓРјРµРЅС‚С‹\Р›РµС‡РµРЅРёРµ РІ РР·СЂР°РёР»Рµ"
+objSC.IconLocation = "\\192.168.1.100\netlogon\label\Israel.ico"
 objSC.Save
 Set objWShell = Nothing
 
@@ -51,12 +84,12 @@ desktopDir = objDesktop.Self.Path & "\"
 Set objDesktop = Nothing
 Set objShell = Nothing
 Set objWShell = CreateObject("WScript.Shell")
-Set objSC = objWShell.CreateShortcut(desktopDir & "Запись на прием.lnk")
-objSC.Description = "Программа"
-objSC.IconLocation = "\\192.168.0.100\netlogon\label\user.ico"
-objSC.TargetPath = "\\192.168.0.211\Froda\On_Eib_C\raspis.vbs"
+Set objSC = objWShell.CreateShortcut(desktopDir & "Р—Р°РїРёСЃСЊ РЅР° РїСЂРёРµРј.lnk")
+objSC.Description = "РџСЂРѕРіСЂР°РјРјР°"
+objSC.IconLocation = "\\192.168.1.100\netlogon\label\user.ico"
+objSC.TargetPath = "\\192.168.0.211\Froda\On_Eib_P\raspis.vbs"
 objSC.WindowStyle = 1
-objSC.WorkingDirectory = "\\192.168.0.211\Froda\On_Eib_C"
+objSC.WorkingDirectory = "\\192.168.0.211\Froda\On_Eib_P"
 objSC.Save
 Set objSC = Nothing
 Set objWShell = Nothing
@@ -67,12 +100,12 @@ desktopDir = objDesktop.Self.Path & "\"
 Set objDesktop = Nothing
 Set objShell = Nothing
 Set objWShell = CreateObject("WScript.Shell")
-Set objSC = objWShell.CreateShortcut(desktopDir & "ЭИБ.lnk")
-objSC.Description = "Программа"
-objSC.IconLocation = "\\192.168.0.100\netlogon\label\TREESURG.ICO"
-objSC.TargetPath = "\\192.168.0.211\Froda\On_Eib_C\eib.vbs"
+Set objSC = objWShell.CreateShortcut(desktopDir & "Р­РР‘.lnk")
+objSC.Description = "РџСЂРѕРіСЂР°РјРјР°"
+objSC.IconLocation = "\\192.168.1.100\netlogon\label\TREESURG.ICO"
+objSC.TargetPath = "\\192.168.0.211\Froda\On_Eib_P\eib.vbs"
 objSC.WindowStyle = 1
-objSC.WorkingDirectory = "\\192.168.0.211\Froda\On_Eib_C"
+objSC.WorkingDirectory = "\\192.168.0.211\Froda\On_Eib_P"
 objSC.Save
 Set objSC = Nothing
 Set objWShell = Nothing
@@ -83,12 +116,12 @@ desktopDir = objDesktop.Self.Path & "\"
 Set objDesktop = Nothing
 Set objShell = Nothing
 Set objWShell = CreateObject("WScript.Shell")
-Set objSC = objWShell.CreateShortcut(desktopDir & "Лаборатория.lnk")
-objSC.Description = "Программа"
-objSC.IconLocation = "\\192.168.0.100\netlogon\label\blood.ico"
-objSC.TargetPath = "\\192.168.0.211\Froda\On_Eib_C\pusk.vbs"
+Set objSC = objWShell.CreateShortcut(desktopDir & "Р›Р°Р±РѕСЂР°С‚РѕСЂРёСЏ.lnk")
+objSC.Description = "РџСЂРѕРіСЂР°РјРјР°"
+objSC.IconLocation = "\\192.168.1.100\netlogon\label\blood.ico"
+objSC.TargetPath = "\\192.168.0.211\Froda\On_Eib_P\pusk.vbs"
 objSC.WindowStyle = 1
-objSC.WorkingDirectory = "\\192.168.0.211\Froda\On_Eib_C"
+objSC.WorkingDirectory = "\\192.168.0.211\Froda\On_Eib_P"
 objSC.Save
 Set objSC = Nothing
 Set objWShell = Nothing
@@ -99,10 +132,10 @@ desktopDir = objDesktop.Self.Path & "\"
 Set objDesktop = Nothing
 Set objShell = Nothing
 Set objWShell = CreateObject("WScript.Shell")
-Set objSC = objWShell.CreateShortcut(desktopDir & "Лечение в Израиле.lnk")
-objSC.Description = "Лечение в Израиле"
-objSC.TargetPath = "\\192.168.0.2\Documents\Clinica\Общие документы\Лечение в Израиле"
-objSC.IconLocation = "\\192.168.0.100\netlogon\label\Israel.ico"
+Set objSC = objWShell.CreateShortcut(desktopDir & "Р‘Р»Р°РЅРє Р·Р°СЏРІРєРё.lnk")
+objSC.Description = "Р‘Р»Р°РЅРє Р·Р°СЏРІРєРё"
+objSC.IconLocation = "\\192.168.1.100\netlogon\label\Edit Text.ico"
+objSC.TargetPath = "\\192.168.0.2\Pub\Р‘Р»Р°РЅРє Р·Р°СЏРІРєРё"
 objSC.Save
 Set objWShell = Nothing
 
@@ -112,41 +145,12 @@ desktopDir = objDesktop.Self.Path & "\"
 Set objDesktop = Nothing
 Set objShell = Nothing
 Set objWShell = CreateObject("WScript.Shell")
-Set objSC = objWShell.CreateShortcut(desktopDir & "Клиника в Израиле.lnk")
-objSC.Description = "Клиника в Израиле"
-objSC.TargetPath = "\\192.168.0.100\Rdll\site.hta"
+Set objSC = objWShell.CreateShortcut(desktopDir & "РЎРїРёСЃРѕРє С‚РµР»РµС„РѕРЅРѕРІ.lnk")
+objSC.Description = "РЎРїРёСЃРѕРє С‚РµР»РµС„РѕРЅРѕРІ"
+objSC.IconLocation = "\\192.168.1.100\netlogon\label\numbers.ico"
+objSC.TargetPath = "\\192.168.0.211\Froda\On_Eib_P\РџСЂРѕРіСЂР°РјРјС‹\spisok.hta"
 objSC.WindowStyle = 1
-objSC.WorkingDirectory = "\\192.168.0.100\Rdll\"
-objSC.IconLocation = "\\192.168.0.100\netlogon\label\Israels.ico"
-objSC.Save
-objSC.Save
-Set objWShell = Nothing
-
-Set objShell = CreateObject("Shell.Application")
-Set objDesktop = objShell.NameSpace(&H0)
-desktopDir = objDesktop.Self.Path & "\"
-Set objDesktop = Nothing
-Set objShell = Nothing
-Set objWShell = CreateObject("WScript.Shell")
-Set objSC = objWShell.CreateShortcut(desktopDir & "Бланк заявки.lnk")
-objSC.Description = "Бланк заявки"
-objSC.IconLocation = "\\192.168.0.100\netlogon\label\Edit Text.ico"
-objSC.TargetPath = "\\192.168.0.2\Pub\Бланк заявки"
-objSC.Save
-Set objWShell = Nothing
-
-Set objShell = CreateObject("Shell.Application")
-Set objDesktop = objShell.NameSpace(&H0)
-desktopDir = objDesktop.Self.Path & "\"
-Set objDesktop = Nothing
-Set objShell = Nothing
-Set objWShell = CreateObject("WScript.Shell")
-Set objSC = objWShell.CreateShortcut(desktopDir & "Программы Он Клиник.lnk")
-objSC.Description = "Программа"
-objSC.IconLocation = "\\192.168.0.100\netlogon\label\onclinic.ico"
-objSC.TargetPath = "\\192.168.0.211\Froda\On_Eib_C\Программы\Цветной Бульвар.hta"
-objSC.WindowStyle = 1
-objSC.WorkingDirectory = "\\192.168.0.211\Froda\On_Eib_C\Программы"
+objSC.WorkingDirectory = "\\192.168.0.211\Froda\On_Eib_P\РџСЂРѕРіСЂР°РјРјС‹"
 objSC.Save
 Set objSC = Nothing
 Set objWShell = Nothing
@@ -157,12 +161,12 @@ desktopDir = objDesktop.Self.Path & "\"
 Set objDesktop = Nothing
 Set objShell = Nothing
 Set objWShell = CreateObject("WScript.Shell")
-Set objSC = objWShell.CreateShortcut(desktopDir & "Список телефонов.lnk")
-objSC.Description = "Список телефонов"
-objSC.IconLocation = "\\192.168.0.100\netlogon\label\numbers.ico"
-objSC.TargetPath = "\\192.168.0.211\Froda\On_Eib_C\Программы\spisok.hta"
+Set objSC = objWShell.CreateShortcut(desktopDir & "РџСЂРѕРіСЂР°РјРјС‹ РћРЅ РљР»РёРЅРёРє.lnk")
+objSC.Description = "РџСЂРѕРіСЂР°РјРјР°"
+objSC.IconLocation = "\\192.168.1.100\netlogon\label\onclinic.ico"
+objSC.TargetPath = "\\192.168.0.211\Froda\On_Eib_P\РџСЂРѕРіСЂР°РјРјС‹\РџСЂРµСЃРЅСЏ.hta"
 objSC.WindowStyle = 1
-objSC.WorkingDirectory = "\\192.168.0.211\Froda\On_Eib_C\Программы"
+objSC.WorkingDirectory = "\\192.168.0.211\Froda\On_Eib_P\РџСЂРѕРіСЂР°РјРјС‹"
 objSC.Save
 Set objSC = Nothing
 Set objWShell = Nothing
